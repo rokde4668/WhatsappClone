@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .page1 {
+        height: 140vh;
+        width: 100%;
+        background-color: #e6ffda;
+    }
+
+    nav {
+        height: 12%;
+        width: 100%;
+        background-color: #e6ffda;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .left-nav {
+        height: 50%;
+        width: 13%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* margin-left: 2%; */
+    }
+
+    .logo-img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .mid-nav {
+        height: 100%;
+        width: 30%;
+        /* background-color: darkgray; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    ul {
+        width: 100%;
+        /* background-color: rgb(225, 75, 75); */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    ul li {
+        font-size: 1.5vmax;
+        position: relative;
+    }
+
+    li::after {
+        content: "";
+        height: 10%;
+        width: 0%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgb(99, 224, 99);
+    }
+
+    li:hover::after {
+        width: 100%;
+    }
+
+
+
+    .right-nav {
+        height: 100%;
+        width: 24%;
+        /* background-color: blue; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        /* margin-right: 2%; */
+    }
+
+    .right-nav h3 {
+        font-size: 1.5vmax;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50px;
+        background-color: #25d366;
+    }
+
+    h5 {
+        padding: 10px 18px;
+        border-radius: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+        z-index: 99;
+    }
+
+    #greendiv {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        transition: left 0.4s ease;
+
+    }
+
+    a:hover #greendiv {
+        left: 0;
+        border-radius: 50px;
+    }
+
+    .bi {
+        margin: 4px;
+        font-weight: 500;
+        font-size: 1.5vmax;
+    }
+
+    /* ----nav end------- */
+    .text-div {
+        height: 28%;
+        width: 74%;
+        /* background-color: thistle; */
+        position: relative;
+        top: 2%;
+        left: 12%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .down-what-h3{
+        font-size: 4vmax;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        line-height: 4.5vmax;
+    }
+
+    p {
+        font-size: 1.5vmax;
+        text-align: center;
+    }
+
+    .condition-span {
+        font-size: 1.1vmax;
+    }
+
+    /* ------------------------ */
+    .box-main {
+        height: 44%;
+        width: 62%;
+        /* background-color: darkgoldenrod; */
+        position: relative;
+        top: 5%;
+        left: 19%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    .box1 {
+        height: 90%;
+        width: 32%;
+        background-color: #111b21;
+        border-radius: 22px;
+
+    }
+
+    .Mobile-text {
+        text-align: center;
+        position: relative;
+        top: 3%;
+        color: white;
+        font-size: 1vmax;
+    }
+
+    .Android-text {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 8%;
+        font-size: 2.5vmax;
+    }
+
+    .mini-peragraf {
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 16%;
+        font-size: 1vmax;
+    }
+    .play-div{
+        height: 15%;
+        width: 50%;
+        /* background-color: aqua; */
+        position: relative;
+        top: 41%;
+        left: 20%;
+        border-radius: 10px;
+    }
+    .android-img1{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .play-div3{
+        height: 15%;
+        width: 50%;
+        /* background-color: aqua; */
+        position: relative;
+        top: 36%;
+        left: 25%;
+        border-radius: 10px;
+    }
+
+    .box2 {
+        height: 90%;
+        width: 32%;
+        background-color: #111b21;
+        border-radius: 22px;
+
+    }
+    .android-img2{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .box3 {
+        height: 90%;
+        width: 32%;
+        background-color: #111b21;
+        border-radius: 22px;
+
+    }
+    .android-img3{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .visit-text {
+        position: relative;
+        top: 10%;
+        left: 35%;
+        font-weight: 300;
+        font-size: 1.4vmax;
+    }
+    /* -------------------------- */
+    .page2{
+        height: 100%;
+        width: 100%;
+        background-color: aliceblue;
+        border-radius: 20%;
+    }
+</style>
+
+<body>
+    <div class="main">
+    <div class="page1">
+        <nav>
+            <div class="left-nav">
+                <img class="logo-img" src="logo.png" alt="">
+            </div>
+            <div class="mid-nav">
+                <ul>
+                    <li>Feature <i class="bi bi-chevron-down"></i></li>
+                    <li>Privacy</li>
+                    <li>Help Centre</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="right-nav">
+                <h3>WhatsApp Web</h3>
+                <a href="#">
+                    <h5>Download<i class="bi bi-download"></i></h5>
+                    <div id="greendiv"></div>
+                </a>
+                <!-- <button class="download-btn">Download<i class="bi bi-download"></i></button> -->
+            </div>
+        </nav>
+        <div class="text-div">
+            <h3 class="down-what-h3">Download <br>
+                WhatsApp
+            </h3>
+            <p>Stay connected on WhatsApp across your devices, so <br> you can pick up any conversation where you left
+                off.
+
+                <br> <br> <span class="condition-span"> By installing WhatsApp, you agree to our Terms & Privacy
+                    Policy.</span>
+            </p>
+        </div>
+        <!-- -----------text-end---- -->
+        <div class="box-main">
+            <div class="box1">
+                <h6 class="Mobile-text">Mobile and Tablet</h6>
+                <h2 class="Android-text">Android</h2>
+                <p class="mini-peragraf">Minimum Requirements
+                    (Version 2.22.13.77) Android OS 4.0.3 or above
+                </p>
+              <a href="https://play.google.com/store/apps">  <div class="play-div">
+                    <img class="android-img1" src="play.png" alt="">
+                </div>
+            </a>
+            </div>
+            <div class="box2">
+                <h6 class="Mobile-text">Mobile </h6>
+                <h2 class="Android-text">iOS</h2>
+                <p class="mini-peragraf">Minimum Requirements (Version 22.13.74)
+                    Requires iOS 12.0 or newer
+                </p>
+                <div class="play-div">
+                    <img class="android-img2" src="appp.svg" alt="">
+                </div>
+            </div>
+            <div class="box3">
+                <h6 class="Mobile-text">Desktop</h6>
+                <h2 class="Android-text">Windows</h2>
+                <p class="mini-peragraf">Requires Windows 10
+                    or newer. For all other operating systems,
+                    you can use WhatsApp Web in your browser.
+                </p>
+                <div class="play-div3">
+                    <img class="android-img3" src="micr0.png" alt="">
+                </div>
+            </div>
+        </div>
+        <h4 class="visit-text">Visit <u> whatsapp.com/dl</u> on your mobile phone to install
+        </h4>
+        
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
